@@ -1,0 +1,17 @@
+{
+  "name": "postgres-recover",
+  "namespace": "data",
+  "ENV" :"dev",
+  "prefix" : "DataStore",
+  "account": "123456789",
+  "manifest": {
+    "schedule": "0 4 * * *",
+    "container": {
+      "name": "postgres-backup",
+      "image": "mdillon/postgis:11",
+      "DEFAULT_REGION": "us-east-2",
+      "AZURE_STORAGE_BACKUP_PATH": "https://123456789.blob.core.windows.net/dev-db-backup/postgres-backup"
+    },
+    "service_account_name": "custom-sa-postgres-backup-dev"
+  }
+}
