@@ -1,6 +1,7 @@
 {
   "name": "postgres-recover",
   "namespace": "data",
+  # TODO refrences to dev should be configurable
   "ENV" :"dev",
   "prefix" : "DataStore",
   "account": "123456789",
@@ -10,6 +11,7 @@
       "name": "postgres-backup",
       "image": "mdillon/postgis:11",
       "DEFAULT_REGION": "us-east-2",
+      ## TODO account should be configurable 
       "AZURE_STORAGE_BACKUP_PATH": "https://123456789.blob.core.windows.net/dev-db-backup/postgres-backup"
     },
     "service_account_name": "custom-sa-postgres-backup-dev"
